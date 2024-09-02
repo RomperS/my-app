@@ -2,8 +2,13 @@
   export let src = '';
   export let size = '100px';
   export let background = 'transparent';
-  export let opacityImg = '1'
+  export let opacityImg = '1';
+  export let position = 'static';
+  export let top = 'auto';        
+  export let left = 'auto';       
+  export let transform = 'none';  
 </script>
+
 
 <style>
   .circle-container {
@@ -15,16 +20,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: var(--position);
+    top: var(--top);
+    left: var(--left);
+    transform: var(--transform);
   }
 
   .circle-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: var(--opacity);
+    opacity: var(--opacityImg);
   }
 </style>
 
-<div class="circle-container" style="--size: {size}; --background: {background}; --opacity: {opacityImg}">
-  <img src={src} alt="Circular Image" />
+<div class="circle-container" style="--size: {size}; --background: {background}; --opacityImg: {opacityImg}; --position: {position}; --top: {top}; --left: {left}; --transform: {transform}">
+  <img src={src} alt="Imagen Cirular" />
 </div>
